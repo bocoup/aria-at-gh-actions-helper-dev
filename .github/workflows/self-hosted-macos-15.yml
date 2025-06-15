@@ -104,7 +104,7 @@ jobs:
         env:
           DEBUG: "*"
         working-directory: node_modules/.bin
-        run: ./at-driver serve
+        run: ./at-driver install --unattended
 
       - name: Wait for the AT Driver server to be ready
         working-directory: node_modules/.bin
