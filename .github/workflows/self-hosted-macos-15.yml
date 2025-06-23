@@ -107,7 +107,10 @@ jobs:
       #   run: ./at-driver install --unattended
 
       - name: Wait for the AT Driver server to be ready
-        run: ./wait-for-server.sh
+        run: |
+          source ~/.zshrc
+          ./wait-for-server.sh
+        shell: zsh {0}
 
       - name: Checkout aria-at ref ${{ inputs.aria_at_ref || 'master' }}
         uses: actions/checkout@v4
