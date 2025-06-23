@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # After installing the AT Driver server and registering its various components,
 # the macOS operating system performs some asynchronous tasks which are
@@ -19,7 +19,7 @@ trap clean_up EXIT
 for attempt in $(seq ${max_attempts}); do
   echo "Testing for server availability (trial ${attempt} of ${max_attempts})."
 
-  ./at-driver serve 2> ${temp_file} &
+  at-driver serve 2> ${temp_file} &
   sleep 3
   say This text came from the say command.
   sleep 1

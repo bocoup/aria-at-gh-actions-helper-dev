@@ -71,12 +71,12 @@ jobs:
         if: inputs.status_url
         run: ./report-status.sh QUEUED ''
 
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-          cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
+      # - name: Use Node.js 20.x
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20.x
+      #     cache: "npm"
+      #     cache-dependency-path: "**/package-lock.json"
 
       - uses: browser-actions/setup-chrome@v1
         if: inputs.browser == 'chrome'
@@ -97,18 +97,17 @@ jobs:
         with:
           ignoreTccDb: true
 
-      - name: Install the macOS AT Driver server package
-        run: npm install @bocoup/macos-at-driver-server@"${AT_DRIVER_SERVER_VERSION}"
+      # - name: Install the macOS AT Driver server package
+      # run: npm install @bocoup/macos-at-driver-server@"${AT_DRIVER_SERVER_VERSION}"
 
-      - name: Configure the system to support the AT Driver server
-        env:
-          DEBUG: "*"
-        working-directory: node_modules/.bin
-        run: ./at-driver install --unattended
+      # - name: Configure the system to support the AT Driver server
+      #   env:
+      #     DEBUG: "*"
+      #   working-directory: node_modules/.bin
+      #   run: ./at-driver install --unattended
 
       - name: Wait for the AT Driver server to be ready
-        working-directory: node_modules/.bin
-        run: ../../wait-for-server.sh
+        run: ./wait-for-server.sh
 
       - name: Checkout aria-at ref ${{ inputs.aria_at_ref || 'master' }}
         uses: actions/checkout@v4
