@@ -158,6 +158,9 @@ jobs:
       - name: Run harness
         run: ./run-tester.sh
 
+      - name: Stop Voiceover
+        run: kill -15 $(ps aux | egrep "[V]oiceOver.app/Contents/MacOS/VoiceOver launchd -s" | awk '{print $2}')
+
       - name: Log job state ERROR
         if: failure() && inputs.status_url
         run: ./report-status.sh ERROR ''
