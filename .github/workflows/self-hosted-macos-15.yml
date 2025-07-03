@@ -74,6 +74,7 @@ jobs:
         if: inputs.browser == 'chrome'
         with:
           chrome-version: stable
+          install-chromedriver: true
 
       - uses: browser-actions/setup-firefox@v1
         if: inputs.browser == 'firefox'
