@@ -19,7 +19,7 @@ trap clean_up EXIT
 for attempt in $(seq ${max_attempts}); do
   echo "Testing for server availability (trial ${attempt} of ${max_attempts})."
 
-  at-driver serve 2> ${temp_file} &
+  ./node_modules/.bin/at-driver serve 2> ${temp_file} &
   sleep 3
   say This text came from the say command.
   sleep 1
