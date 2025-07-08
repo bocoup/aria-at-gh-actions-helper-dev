@@ -99,6 +99,9 @@ jobs:
         working-directory: node_modules/.bin
         run: ./at-driver install --unattended
 
+      - name: Add node_modules/.bin to PATH
+        run: echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
+
       - name: Wait for the AT Driver server to be ready
         working-directory: node_modules/.bin
         run: ../../wait-for-server.sh
