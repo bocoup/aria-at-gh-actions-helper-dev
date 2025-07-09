@@ -89,6 +89,7 @@ jobs:
         uses: guidepup/setup-action@0.16.0
         with:
           ignoreTccDb: true
+          record: true
 
       - name: Install the macOS AT Driver server package
         run: npm install @bocoup/macos-at-driver-server@"${AT_DRIVER_SERVER_VERSION}"
@@ -173,11 +174,17 @@ jobs:
         if: success() && inputs.status_url
         run: ./report-status.sh COMPLETED ''
 
-      - name: upload *.{log,png}
+      - name: upload logs, screenshots, and screen recordings
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: logs
+          # > If you are encountering errors in CI for MacOS you can pass a
+          # > `record` option which will output a screen-recording of the setup
+          # > to a `./recordings/` directory
+          #
+          # https://github.com/guidepup/setup-action
           path: |
             *.log
             *.png
+            recordings/
