@@ -86,7 +86,7 @@ jobs:
         run: ./install-geckodriver.sh
 
       - name: Setup Environment
-        uses: guidepup/setup-action@0.16.0
+        uses: guidepup/setup-action@0.17.2
         with:
           ignoreTccDb: true
           record: true
