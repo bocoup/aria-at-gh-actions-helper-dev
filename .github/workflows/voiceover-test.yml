@@ -50,7 +50,7 @@ on:
           The version or version range of the macOS AT Driver server to install from npm
         required: false
         type: string
-        default: "~0.1.0"
+        default: "0.1.0"
 
 env:
   ARIA_AT_WORK_DIR: ${{ inputs.work_dir || 'tests/alert' }}
@@ -154,7 +154,7 @@ jobs:
       # Ensure that VoiceOver doesn't automatically read through intrusive system
       # notifications (such as "Background/Login Item Added" notifications)
       # https://becomethesolution.com/mac/disable-mac-notification-center-permanently-terminal-command
-      - name: Disable MacOS Notifications 
+      - name: Disable MacOS Notifications
         run: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
       - name: Log job state RUNNING
