@@ -32,6 +32,13 @@ on:
           with status updates.
         required: false
         type: string
+      macos_version:
+        description: "macOS version to run the test on"
+        required: false
+        type: choice
+        options:
+          - "15"
+        default: "15"
       browser:
         description: |
           The browser to use for testing, "chrome" or "firefox" or "safari", default "safari"
