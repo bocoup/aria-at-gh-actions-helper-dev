@@ -20,9 +20,9 @@ for attempt in $(seq ${max_attempts}); do
   echo "Testing for server availability (trial ${attempt} of ${max_attempts})."
 
   ./at-driver serve 2> ${temp_file} &
-  sleep 3
+  sleep 5
   say This text came from the say command.
-  sleep 1
+  sleep 5
   kill -9 %%
 
   if grep --silent 'This text came from the say command.' ${temp_file}; then
