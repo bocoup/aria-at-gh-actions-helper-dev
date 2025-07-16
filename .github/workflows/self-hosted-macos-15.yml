@@ -136,27 +136,27 @@ jobs:
         # rejects the kinds of interactions--namely, key presses--that ARIA-AT
         # tests must simulate).
         # https://stackoverflow.com/questions/37802673/allow-javascript-from-apple-events-in-safari-through-terminal-mac
-      - name: Configure Safari to Allow JavaScript from Apple Events
-        run: defaults write -app Safari AllowJavaScriptFromAppleEvents 1
+      # - name: Configure Safari to Allow JavaScript from Apple Events
+      #   run: defaults write -app Safari AllowJavaScriptFromAppleEvents 1
 
-      - name: Configure Safari to Open New Windows with an Empty Page
-        run: defaults write -app Safari NewWindowBehavior 1
+      # - name: Configure Safari to Open New Windows with an Empty Page
+      #   run: defaults write -app Safari NewWindowBehavior 1
 
-      - name: Configure Safari to Open New Tabs with an Empty Page
-        run: defaults write -app Safari NewTabBehavior 1
+      # - name: Configure Safari to Open New Tabs with an Empty Page
+      #   run: defaults write -app Safari NewTabBehavior 1
 
-        # Ensure that VoiceOver doesn't automatically read through the entirety of
-        # a webpage when its loaded and there isn't immediate keyboard interaction.
-        # This is turned on by default for some versions of MacOS
-        # https://support.apple.com/guide/voiceover/general-cpvouwebpageloading/mac
-      - name: Configure VoiceOver not to "Automatically Speak Web Page"
-        run: defaults write com.apple.VoiceOver4/default SCRCUserDefaultsAutomaticallySpeakWebPage 0
+      # Ensure that VoiceOver doesn't automatically read through the entirety of
+      # a webpage when its loaded and there isn't immediate keyboard interaction.
+      # This is turned on by default for some versions of MacOS
+      # https://support.apple.com/guide/voiceover/general-cpvouwebpageloading/mac
+      # - name: Configure VoiceOver not to "Automatically Speak Web Page"
+      #   run: defaults write com.apple.VoiceOver4/default SCRCUserDefaultsAutomaticallySpeakWebPage 0
 
       # Ensure that VoiceOver doesn't automatically read through intrusive system
       # notifications (such as "Background/Login Item Added" notifications)
       # https://becomethesolution.com/mac/disable-mac-notification-center-permanently-terminal-command
-      - name: Disable MacOS Notifications
-        run: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+      # - name: Disable MacOS Notifications
+      #   run: launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
       - name: Log job state RUNNING
         if: inputs.status_url
