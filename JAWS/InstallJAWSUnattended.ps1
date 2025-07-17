@@ -136,8 +136,8 @@ if (-Not (Test-Path $settings))
 {
     New-Item $settings
 }
-
 Add-Content -Path $settings -Value @"
+
 [HTML]
 SayAllOnDocumentLoad=0
 [options]
