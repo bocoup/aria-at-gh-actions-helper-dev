@@ -142,6 +142,7 @@ Add-Content -Path $settings -Value @"
 SayAllOnDocumentLoad=0
 [options]
 TypingEcho=0
+DisplayStartupWizard=0
 "@
 
 Write-Host "[x] Settings file setup - now reads:"
@@ -150,7 +151,7 @@ Get-Content $settings
 #start JAWS
 # /startrcs starts JAWS with Remote Command Server enabled
 # /default suppresses JAWS startup wizard
-$JAWSProcess = Start-Process -FilePath $TargetJAWSFile -ArgumentList "/startrcs /default" -PassThru
+$JAWSProcess = Start-Process -FilePath $TargetJAWSFile -ArgumentList "/startrcs" -PassThru
 if ($null -eq $JAWSProcess)
 {
     Write-Host " [ ] Failed to start JAWS. Please check the installation and try again."
