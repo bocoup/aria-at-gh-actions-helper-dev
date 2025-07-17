@@ -136,14 +136,16 @@ if (-Not (Test-Path $settings))
 {
     New-Item $settings
 }
-Add-Content -Path $settings -Value @"
 
+Add-Content -Path $settings -Value @"
 [HTML]
 SayAllOnDocumentLoad=0
 [options]
 TypingEcho=0
 "@
 
+Write-Host "[x] Settings file setup - now reads:"
+Get-Content $settings
 
 #start JAWS
 # /startrcs starts JAWS with Remote Command Server enabled
