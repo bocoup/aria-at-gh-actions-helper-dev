@@ -87,7 +87,7 @@ jobs:
         with:
           repository: "Prime-Access-Consulting/nvda-at-automation"
           path: "nvda-at-automation"
-          ref: 0fc1ce292cd93ddceadc7d7a4a013460fcf6092a
+          ref: 1a84832d5889d56d6452230b971054f057bcdae2
 
       - name: Checkout aria-at ref ${{ inputs.aria_at_ref || 'master' }}
         uses: actions/checkout@v4
@@ -96,8 +96,10 @@ jobs:
           path: "aria-at"
           ref: ${{ inputs.aria_at_ref || 'master' }}
 
+# for testing specific branch or SHA you can use
+# npm install https://github.com/w3c/aria-at-automation-harness#branch-name
       - name: Install the ARIA-AT Automation Harness package
-        run: npm install aria-at-automation-harness@"~0.1.0"
+        run: npm install @bocoup/aria-at-automation-harness@1.1.1
 
       - name: Download nvda-portable zip
         uses: robinraju/release-downloader@v1.9
