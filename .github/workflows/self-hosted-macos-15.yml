@@ -98,7 +98,7 @@ jobs:
           ignoreTccDb: true
 
       - name: Install the macOS AT Driver server package
-        run: npm install https://github.com/w3c/aria-at-automation-harness#time-tests
+        run: npm install @bocoup/macos-at-driver-server@"${AT_DRIVER_SERVER_VERSION}"
 
       - name: Configure the system to support the AT Driver server
         env:
