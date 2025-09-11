@@ -47,12 +47,12 @@ if ($env:NVDA_PORTABLE_ZIP)
   Write-Output "Waiting for localhost:3031 to start from at-driver"
   Wait-For-HTTP-Response -RequestURL http://localhost:3031
 
-  $atDriverUrl = "ws://127.0.0.1:3031/command"
+  $atDriverUrl = "ws://127.0.0.1:3031/session"
 }
 
 if ($env:JAWS_VERSION)
 {
-  $atDriverUrl = "ws://127.0.0.1:9002/command"
+  $atDriverUrl = "ws://127.0.0.1:9002/session"
 }
 
 switch ($env:BROWSER)

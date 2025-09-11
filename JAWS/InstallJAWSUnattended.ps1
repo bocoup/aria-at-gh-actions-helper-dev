@@ -1,9 +1,9 @@
 $URL = switch ($env:JAWS_VERSION)
 {
-    "2025.2507.149" { "https://software.vfo.digital/JAWS/2025/2025.2507.149.400/92BC0086-61A8-47B4-A662-7D964ED328A2/J2025.2507.149.400-Offline-x64.exe" }
+    "2025.2508.120" { "https://software.vfo.digital/JAWS/2025/2025.2508.120.400/56B705E6-BE2D-4DB8-A7A3-B9B7A42B9361/J2025.2508.120.400-any.exe" }
     # default value should point to newest - old versions that are still supported should be listed.
-    # update https://github.com/w3c/aria-at-app/blob/development/server/util/constants.js 
-    default { "https://software.vfo.digital/JAWS/2025/2025.2507.149.400/92BC0086-61A8-47B4-A662-7D964ED328A2/J2025.2507.149.400-Offline-x64.exe" }
+    # update https://github.com/w3c/aria-at-app/blob/development/server/util/constants.js
+    default { "https://software.vfo.digital/JAWS/2025/2025.2508.120.400/56B705E6-BE2D-4DB8-A7A3-B9B7A42B9361/J2025.2508.120.400-any.exe" }
 }
 
 Write-Host "Found version $env:JAWS_VERSION at $URL"
