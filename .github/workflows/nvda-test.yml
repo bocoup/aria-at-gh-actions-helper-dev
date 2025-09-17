@@ -71,9 +71,6 @@ jobs:
     runs-on: windows-2025
     steps:
 
-      - name: edgedriver test
-        run: msedgedriver --help
-
       - name: Log job state QUEUED
         shell: powershell
         if: inputs.status_url

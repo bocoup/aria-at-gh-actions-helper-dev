@@ -43,7 +43,7 @@ on:
         type: string
       browser:
         description: |
-          The browser to use for testing, "chrome" or "firefox", default "chrome"
+          The browser to use for testing, "chrome" "firefox" or "edge", default "chrome"
         required: false
         type: string
       jaws_version:

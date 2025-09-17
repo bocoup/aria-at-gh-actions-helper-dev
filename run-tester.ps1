@@ -73,6 +73,14 @@ switch ($env:BROWSER)
     Wait-For-HTTP-Response -RequestURL http://localhost:4444/
     Break
   }
+  edge
+  {
+    Write-Output "Starting msedgedriver"
+    $webdriverprocess = Start-Job -Init ([ScriptBlock]::Create("Set-Location '$pwd'")) -ScriptBlock { msedgedriver --port=4444 *>&1 >$using:loglocation\webdriver.log }
+    Write-Output "Waiting for localhost:4444 to start from msedgedriver"
+    Wait-For-HTTP-Response -RequestURL http://localhost:4444/
+    Break
+  }
   default
   {
     throw "Unknown browser"
