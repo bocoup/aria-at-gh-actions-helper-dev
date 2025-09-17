@@ -43,7 +43,7 @@ on:
         type: string
       browser:
         description: |
-          The browser to use for testing, "chrome" "firefox" or "edge", default "chrome"
+          The browser to use for testing, "chrome" "firefox" or "MicrosoftEdge", default "chrome"
         required: false
         type: string
       nvda_version:
