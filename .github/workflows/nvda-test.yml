@@ -43,7 +43,7 @@ on:
         type: string
       browser:
         description: |
-          The browser to use for testing, "chrome" or "firefox", default "chrome"
+          The browser to use for testing, "chrome" "firefox" or "edge", default "chrome"
         required: false
         type: string
       nvda_version:
@@ -70,6 +70,10 @@ jobs:
   nvda-test:
     runs-on: windows-2025
     steps:
+
+      - name: edgedriver test
+        run: msedgedriver --help
+
       - name: Log job state QUEUED
         shell: powershell
         if: inputs.status_url
