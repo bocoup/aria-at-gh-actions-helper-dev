@@ -97,6 +97,10 @@ jobs:
         with:
           ignoreTccDb: true
 
+      - name: Close all Safari Windows
+        if: (inputs.browser || 'safari') == 'safari'
+        run: echo -e 'tell application "Safari" \n close every window \n end tell' | osascript
+
       - name: Install the macOS AT Driver server package
         run: npm install @bocoup/macos-at-driver-server@"${AT_DRIVER_SERVER_VERSION}"
 
