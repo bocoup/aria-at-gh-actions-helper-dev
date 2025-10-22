@@ -43,7 +43,7 @@ on:
         type: string
       browser:
         description: |
-          The browser to use for testing, "chrome" or "firefox", default "chrome"
+          The browser to use for testing, "chrome" "firefox" or "MicrosoftEdge", default "chrome"
         required: false
         type: string
       jaws_version:
@@ -96,7 +96,7 @@ jobs:
 # for testing specific branch or SHA you can use
 # npm install https://github.com/w3c/aria-at-automation-harness#branch-name
       - name: Install the ARIA-AT Automation Harness package
-        run: npm install @bocoup/aria-at-automation-harness@1.1.0
+        run: npm install @bocoup/aria-at-automation-harness@1.2.0
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
