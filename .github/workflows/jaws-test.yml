@@ -20,7 +20,7 @@ on:
         description: |
           The --plan-workingdir passed to the aria-at-automation harness.
           Based from the aria-at repo build folder.
-          Uses a default of tests/alert if not provided.
+          Uses a default of tests/apg/alert if not provided.
         required: false
         type: string
       callback_url:
@@ -61,7 +61,7 @@ on:
       #   type: string
 
 env:
-  ARIA_AT_WORK_DIR: ${{ inputs.work_dir || 'tests/alert' }}
+  ARIA_AT_WORK_DIR: ${{ inputs.work_dir || 'tests/apg/alert' }}
   ARIA_AT_TEST_PATTERN: ${{ inputs.test_pattern || '{reference/**,test-*-jaws.*}'}}
   ARIA_AT_CALLBACK_URL: ${{ inputs.callback_url }}
   ARIA_AT_STATUS_URL: ${{ inputs.status_url }}
